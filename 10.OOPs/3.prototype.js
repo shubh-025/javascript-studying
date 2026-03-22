@@ -87,3 +87,5 @@ String.prototype.truelength = function(){
 anotherUser.truelength()
 
 'gawky babu   '.truelength()
+
+// now we get true js
