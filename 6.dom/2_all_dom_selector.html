@@ -1,0 +1,167 @@
+<!-- we are trying to grab elements in dom -->
+
+<!-- wikipedia page is useful for learning stuff -->
+
+<!-- in this we will learn how to grab elements from the page and manipulate them  -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dom learning</title>
+    <style>
+      .bg-black {
+        background-color: #212121;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 id="title" class="heading">Dom learning on chai_code</h1>
+
+      <h1>Lorem, ipsum.</h1>
+      <h2>Lorem, ipsum dolor.</h2>
+      <p>Lorem ipsum dolor sit amet consectetur.</p>
+      <input type="password" >
+
+      <ul>
+        <li class = "list-item">3</li>
+        <li class = "list-item">4</li>
+        <li class = "list-item">5</li>
+      </ul>
+
+    </div>
+  </body>
+</html>
+
+<!-- learning how to grab elements
+document.getElementById() -->
+
+<!-- document.getElementById("title")
+<h1 id=​"title" class=​"heading">​Dom learning on chai_code​</h1>​
+document.getElementById("title").id
+'title'
+document.getElementById("title").class
+undefined
+document.getElementById("title").className
+'heading'
+document.getElementById("title").getAttribute
+ƒ getAttribute() { [native code] }
+clear
+ƒ clear() { [native code] }
+document.getElementById("title").getAttribute('id')
+'title'
+document.getElementById("title").setAttribute('class','test') -->
+
+<!-- document.getElementById('title')
+<h1 id=​"title" class=​"heading">​Dom learning on chai_code​</h1>​
+const title = document.getElementById('title')
+undefined
+title.style(color: "red")
+VM1274:1 Uncaught SyntaxError: missing ) after argument list
+title.style.backgroundColor = "green"
+'green'
+title.style.padding = "15px"
+'15px'
+title.style.borderRadius = "15px"
+'15px' -->
+
+
+<!-- title.innerText
+'Dom learning on chai_code'
+title.innerHTML
+'Dom learning on chai_code'
+title.textContent
+'Dom learning on chai_code' -->
+
+<!-- difference in .textcontent and .innertext 
+textcontnet shows everything coded(wether it is open for diplay on the website or not) 
+whereas innertext only shows content which is visible 
+
+inner html give tags as well along with textcontent
+-->
+
+
+<!-- learning some good querry selectors -->
+ <!-- .queryselector('h1') will only select the first 
+  
+ document.querySelector('h1')
+<h1 id=​"title" class=​"heading">​Dom learning on chai_code​</h1>​
+document.querySelector('#title')
+<h1 id=​"title" class=​"heading">​Dom learning on chai_code​</h1>​
+document.querySelector('.heading')
+<h1 id=​"title" class=​"heading">​Dom learning on chai_code​</h1>​
+document.querySelector('input[type="password"]')
+
+
+this queryselector supports all type of "css selector" synatx like #=id, .=class, p: paragraph and so on
+
+document.querySelector('ul')
+<ul>​…​</ul>​
+const var_ul = document.querySelector('ul')
+undefined
+var_ul.querySelector('li')
+<li>​…​</li>​
+var_ul.querySelector('li').style.backgroundColor="green"
+
+-->
+
+
+<!-- now what if we want to select more than 1 element 
+ 
+document.querySelectorAll('li')
+NodeList(3) [li, li, li]0: li1: li2: lilength: 3[[Prototype]]: NodeList
+const arr = document.querySelectorAll('li')
+undefined
+arr
+NodeList(3) [li, li, li]0: li1: li2: lilength: 3[[Prototype]]: NodeListentries: ƒ entries()forEach: ƒ forEach()item: ƒ item()keys: ƒ keys()length: (...)values: ƒ values()constructor: ƒ NodeList()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "NodeList"get length: ƒ length()[[Prototype]]: Object
+console.log(typeof arr)
+VM1782:1 object
+undefined
+arr.style.color="red"
+VM1837:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+    at <anonymous>:1:16
+      
+      -->
+
+
+
+      <!-- 
+
+arr
+NodeList(3) [li, li, li]0: li1: li2: lilength: 3[[Prototype]]: NodeList
+arr[0]
+<li>​…​</li>​
+arr[0].style.colo
+undefined
+arr[0].style.color = 'red'
+'red'
+const myh1 = document.querySelectorAll('h1')
+undefined
+myh1
+NodeList(2) [h1#title.heading, h1]
+myh1[1].style.color = "purple"
+'purple'
+
+
+arr.forEach(function (l) {
+      l.style.backgroundColor= "yellow"
+})
+
+
+
+document.getElementsByClassName('list-item')
+HTMLCollection(3) [li.list-item, li.list-item, li.list-item]0: li.list-item1: li.list-item2: li.list-itemlength: 3[[Prototype]]: HTMLCollectionitem: ƒ item()length: (...)namedItem: ƒ namedItem()constructor: ƒ HTMLCollection()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "HTMLCollection"get length: ƒ length()[[Prototype]]: Object
+const tm_list = document.getElementsByClassName('list-item')
+undefined
+Array.from(tm_list)
+(3) [li.list-item, li.list-item, li.list-item]0: li.list-item1: li.list-item2: li.list-item
+const converted_array = Array.from(tm_list)
+undefined
+converted_array
+(3) [li.list-item, li.list-item, li.list-item]
+converted_array.forEach( function (l) {
+  l.style.color = "orange"
+})
+      -->

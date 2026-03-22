@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // in js mostly file is executed sequentially 
+    // except some exceptions
+    // adding onclick in html tag bad approach
+
+    // document.getElementById('owl').onclick = function(){
+    //     alert('owl clicked')
+    // }
+    // this is also not a good technique but a better way is to use event listener
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     //  alert('owl clicked again')
+
+    //     //  e is an event object
+    //     console.log(e)
+    // }, false)   // this false or true is called event propagation
+ 
+    //     // attachEvent( also was used in earlier times)
+    // // jquery - there was on event listener
+
+    // // study = type(of events) , timestamp, defaultPrevented(especially when filling form),target,toElement, srcElement, currentTarget,
+    // // clientx, clienty, screenX, screenY
+    // // altkey, controlkey, Shiftkey, keycode
+    
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log('clicked inside ul');
+    // }, false)
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log('owl clicked');
+    //     e.stopPropagation()   // will stop it from bubbling
+    // }, false)   // true = capturing(out to in), false = bubbling(in to out)
+    
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log('google clicked')
+
+    // },false)
+
+
+    // what we want to do click on the image and image disappears
+
+    document.querySelector('#images').addEventListener('click',function(e){
+            // console.log(e.target.parentNode);
+            // let removeIt = e.target.parentNode
+            // removeIt.remove()
+
+            // removeIt.parentNode.removeChild(removeIt) both are ok
+
+            //  but clicking near google removes everything as its parent node is ul
+            console.log(e.target.tagName);
+            
+            if(e.target.tagName === 'IMG'){
+                console.log(e.target.id)
+                let removeIt = e.target.parentNode
+                removeIt.remove();
+            }
+    },false)
+    </script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom editing and removing</title>
+</head>
+<body style="background-color: black; color: white;" >
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    function addlanguage(langname){
+        const li = document.createElement('li')
+        li.innerHTML = `${langname}`
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addlanguage("python")
+    addlanguage("cpp")
+
+    // optimized function
+
+    function addlanguage_optimized (langname){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector('.language').appendChild(li)
+    }
+    addlanguage_optimized('golang')
+
+    // edit
+
+    const second_lang = document.querySelector("li:nth-child(2)")
+    // one way to edit
+    second_lang.innerHTML = "Mojo" // but not so optimized
+    // another approach
+    const newli = document.createElement("li")
+    newli.textContent = "MOJO"
+    second_lang.replaceWith(newli)
+    
+    // edit
+    const firstlang = document.querySelector("li:first-child")
+    firstlang.outerHTML = '<li> Typescript </li>'
+
+    // remove golang
+
+    const lastlang = document.querySelector("li:last-child")
+    lastlang.remove()
+</script>
+</html>

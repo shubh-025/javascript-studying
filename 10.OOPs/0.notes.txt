@@ -1,0 +1,29 @@
+javascript and classes 
+
+Js is prototype based language (not object oriented or something else)
+
+OOP is a programming paradigm (style or syntax of writing programs)
+
+Object ?
+ans : collection of properties and method
+   - toLowerCase
+
+why oops?
+ans: code makes more cleaner , saves us from spaggeti code
+
+parts of OOP?
+ans: object literal (literally an object),
+constructor, prototypes , etc....
+
+4 pillars of OOP
+ans :  abstraction (hiding the details like fetch)
+       encapsulation (wrap up data so u can access methods and stuff from it )
+       inheritance 
+       polymorphism 
+
+
+
+- Constructor function
+- prototypes
+- classes
+- Instances (new , this )

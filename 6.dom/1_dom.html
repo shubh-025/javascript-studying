@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom learning</title>
+</head>
+<body>
+    <div class="bg-black">
+        <h1 class="heading">Dom learning on chai_code</h1>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
+    </div>
+</body>
+</html>
+
+<!-- do console.log(document) to see the html document of any page on web (in browser inspect console) -->
+
+<!-- document.getElementById('') -->
+<!-- document.getElementById('').innerHTML = "your own html code" -->
+
+<!-- here id is the attribute that we define for a tag -->
+
+
+
+<!-- 
+
+arr
+NodeList(3) [li, li, li]0: li1: li2: lilength: 3[[Prototype]]: NodeList
+arr[0]
+<li>​…​</li>​
+arr[0].style.colo
+undefined
+arr[0].style.color = 'red'
+'red'
+const myh1 = document.querySelectorAll('h1')
+undefined
+myh1
+NodeList(2) [h1#title.heading, h1]
+myh1[1].style.color = "purple"
+'purple'
+
+
+arr.forEach(function (l) {
+      l.style.backgroundColor= "yellow"
+})
+
+
+
+document.getElementsByClassName('list-item')
+HTMLCollection(3) [li.list-item, li.list-item, li.list-item]0: li.list-item1: li.list-item2: li.list-itemlength: 3[[Prototype]]: HTMLCollectionitem: ƒ item()length: (...)namedItem: ƒ namedItem()constructor: ƒ HTMLCollection()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "HTMLCollection"get length: ƒ length()[[Prototype]]: Object
+const tm_list = document.getElementsByClassName('list-item')
+undefined
+Array.from(tm_list)
+(3) [li.list-item, li.list-item, li.list-item]0: li.list-item1: li.list-item2: li.list-item
+const converted_array = Array.from(tm_list)
+undefined
+converted_array
+(3) [li.list-item, li.list-item, li.list-item]
+converted_array.forEach( function (l) {
+  l.style.color = "orange"
+})
+      -->
